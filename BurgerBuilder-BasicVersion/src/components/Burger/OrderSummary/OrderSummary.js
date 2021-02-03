@@ -4,15 +4,13 @@ import Button from '../../UI/Button/Button';
 const orderSummary = props => {
 
     const burgerIngredients = Object.entries(props.ingredients)
-        .map( ([ingredient,count]) => {
-            return (
-                <li key={ingredient}>
-                    <span style={{textTransform:'capitalize'}}>
-                        {ingredient}
-                    </span> : {count}
-                </li>
-                )
-        });
+        .map( ([ingredient,count]) => (
+            <li key={ingredient}>
+                <span style={{textTransform:'capitalize'}}>
+                    {ingredient}
+                </span> : {count}
+            </li>
+        ));
     
     return (
         <>

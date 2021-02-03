@@ -1,10 +1,8 @@
-// Wrapping component, with custom styles
+// Wrapping component, with custom styles + imported Backdrop
 import classes from './Modal.module.css';
 import Backdrop from '../Backdrop/Backdrop';
 
-const modal = props => {
-
-    return (
+const modal = props => (
         <>
             <div 
                 style = {{
@@ -17,8 +15,6 @@ const modal = props => {
             </div>
             <Backdrop show={props.show} clicked={props.click} />
         </>
-    );
-
-}
+);
 
 export default modal;
