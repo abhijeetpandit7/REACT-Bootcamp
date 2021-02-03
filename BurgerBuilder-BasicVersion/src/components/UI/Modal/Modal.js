@@ -1,8 +1,9 @@
 // Wrapping component, with custom styles + imported Backdrop
+import React from 'react';
 import classes from './Modal.module.css';
 import Backdrop from '../Backdrop/Backdrop';
 
-const modal = props => (
+const Modal = props => (
         <>
             <div 
                 style = {{
@@ -17,4 +18,6 @@ const modal = props => (
         </>
 );
 
-export default modal;
+export default React.memo(Modal, (prevProps, nextProps) => {
+    return prevProps.show === nextProps.show;
+});
