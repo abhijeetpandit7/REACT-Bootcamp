@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import InputField from "./InputField/InputField";
+import AuthContext from "../../../context/auth-context";
 import classes from "./ExpenseForm.module.css";
 
 const ExpenseForm = () => {
@@ -10,6 +11,7 @@ const ExpenseForm = () => {
   // const amountChangeHandler = (event) => setEnteredAmount(event.target.value);
   // const dateChangeHandler = (event) => setEnteredDate(event.target.value);
 
+  const authContext = useContext(AuthContext);
   const [userInput, setUserInput] = useState({
     enteredTitle: "",
     enteredAmount: "",
@@ -27,7 +29,7 @@ const ExpenseForm = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(userInput);
+    authContext.onSaveExpenseData(userInput);
     setUserInput({
       enteredTitle: "",
       enteredAmount: "",
