@@ -1,9 +1,9 @@
-import ExpenseItems from "./components/ExpenseItems/ExpenseItems";
+import Expenses from "./components/Expenses/Expenses";
 
 function App() {
   return (
     <>
-      <ExpenseItems />
+      <Expenses />
     </>
   );
 }
